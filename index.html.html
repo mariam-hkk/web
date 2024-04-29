@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>MasteryHub Academy</title>
+    <link rel="stylesheet" href="software.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!--js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <header class="header">
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#courses">COURSES</a></li>
+        <li><a href="#teachers">TEACHERS</a></li>
+        <li><a href="#about">CONTACT US</a></li>
+        <li><a href="#register">REGISTER NOW</a></li>
+        <li><a href="#register">LOG-IN</a></li>
+
+
+      </ul>
+      <ul>
+        <li class="logo"><a href="#">MasteryHub</a></li>
+        <li class="hideOnMobile"><a href="#home">HOME</a></li>
+        <li class="hideOnMobile"><a href="#courses">COURSES</a></li>
+        <li class="hideOnMobile"><a href="#teachers">TEACHERS</a></li>
+        <li class="hideOnMobile"><a href="#about">CONTACT US</a></li>
+        <li class="hideOnMobile"><a href="#register">LOG-IN</a></li>
+
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      </ul>
+    </nav>
+</header>
+   
+<!---home-->
+<section class="home" id="home">
+<div class="row">
+    <div class="content">
+        <h3>
+          MasteryHub 
+             <span> Academy</span>
+        </h3>
+        <a href="#contect" class="btn">   contect Us   </a>
+    </div>
+    <div class="image">
+        <img src="photo_5474307711836476967_x-transformed_upscayl_3x_realesrgan-x4plus-Recovered.png" alt="" >
+    </div>
+</div>
+
+</section>
+
+
+
+<!---new section-->
+<section class="count" >
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+        <div class="content">
+            <h3>150+</h3>
+            <p>courses</p>
+        </div>   
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-graduate"></i>
+        <div class="content">
+            <h3>1300+</h3>
+            <p>students</p>
+        </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-chalkboard-user"></i>
+        <div class="content">
+            <h3>80+</h3>
+            <p>teachers</p>
+        </div>       
+        </div>
+
+        <div class="box">
+            <i class="fas fa-smile"></i>
+        <div class="content">
+            <h3>100%</h3>
+            <p>satisfaction</p>
+        </div>
+        
+        </div>
+    </div>
+</section>
+</br>
+</br>
+<!--الكورسات-->
+<div class="wrapper" id="courses">
+  <h3>Our Courses</h3>
+</br>
+    <div id="search-container">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search product name here.."
+      />
+      <button id="search">Search</button>
+    </div>
+    <div id="buttons">
+      <button class="button-value" onclick="filterProduct('all')">All</button>
+      <button class="button-value" onclick="filterProduct('development')">
+        development
+      </button>
+      <button class="button-value" onclick="filterProduct('business')">
+        business
+      </button>
+      <button class="button-value" onclick="filterProduct('IT&software')">
+        IT&software
+      </button>
+      <button class="button-value" onclick="filterProduct('photography&video')">
+        photography&video
+      </button>
+      <button class="button-value" onclick="filterProduct('office_productivity')">
+        office_productivity
+      </button>
+      <button class="button-value" onclick="filterProduct('music')">
+        music
+      </button>
+      <button class="button-value" onclick="filterProduct('life_style')">
+        life_style
+      </button>
+    </div>
+    <div id="products"></div>
+  </div>
+  <script type="text/javascript">
+let products = {
+data: [
+  {
+    productName: "sales",
+    category: "business",
+    price: "30",
+    image: "seals.jpg",
+  },
+  {
+    productName: "management",
+    category: "business",
+    price: "30",
+    image: "managementt.jpg",
+  },
+  {
+    productName: "business law",
+    category: "business",
+    price: "30",
+    image: "business law.jpg",
+  },
+  {
+    productName: "web development",
+    category: "development",
+    price: "99",
+    image: "web developmentt.jpg",
+  },
+  {
+    productName: "mobile development",
+    category: "development",
+    price: "99",
+    image: "mobile development.jpg",
+  },
+  {
+    productName: "data science",
+    category: "development",
+    price: "99",
+    image: "data sciencee.jpg",
+  },
+  {
+    productName: "game development",
+    category: "development",
+    price: "99",
+    image: "game development.jpg",
+  },
+  {
+    productName: "network & security",
+    category: "IT&software",
+    price: "29",
+    image: "network & security.jpg",
+    
+  },
+  {
+    productName: "hardware",
+    category: "IT&software",
+    price: "29",
+    image: "hardware.jpg",
+  },
+  {
+    productName: "operation system & servers",
+    category: "IT&software",
+    price: "29",
+    image: "people.jpg",
+  },
+  {
+    productName: "digital photography",
+    category: "photography&video",
+    price: "129",
+    image: "igital photography.jpg",
+  },
+  {
+    productName: "video design",
+    category: "photography&video",
+    price: "129",
+    image: "video design.jpg",
+  },
+  {
+    productName: "photography tools",
+    category: "photography&video",
+    price: "129",
+    image: "aphotography tools.jpg",
+  },
+  {
+    productName: "microsoft",
+    category: "office_productivity",
+    price: "89",
+    image: "amicrosoft.jpg",
+  },
+  {
+    productName: "apple",
+    category: "office_productivity",
+    price: "89",
+    image: "apple.jpg",
+  },
+  {
+    productName: "google",
+    category: "office_productivity",
+    price: "89",
+    image: "agoogle.jpg",
+  },
+  {
+    productName: "SAP",
+    category: "office_productivity",
+    price: "89",
+    image: "SAP.jpg",
+  },
+  {
+    productName: "music production",
+    category: "music",
+    price: "89",
+    image: "music production.jpg",
+  },
+  {
+    productName: "music fundamentals",
+    category: "music",
+    price: "89",
+    image: "music fundamentals.jpg",
+  },
+  {
+    productName: "beauty and makeup",
+    category: "life_style",
+    price: "189",
+    image: "beauty and makeup.jpg",
+  },
+  {
+    productName: "travel",
+    category: "life_style",
+    price: "49",
+    image: "travel.jpg",
+  },
+  {
+    productName: "art&crafts",
+    category: "life_style",
+    price: "49",
+    image: "art.jpg",
+  },
+],
+};
+
+for (let i of products.data) {
+//Create Card
+let card = document.createElement("div");
+//Card should have category and should stay hidden initially
+card.classList.add("card", i.category, "hide");
+//image div
+let imgContainer = document.createElement("div");
+imgContainer.classList.add("image-container");
+//img tag
+let image = document.createElement("img");
+image.setAttribute("src", i.image);
+imgContainer.appendChild(image);
+card.appendChild(imgContainer);
+//container
+let container = document.createElement("div");
+container.classList.add("container");
+//product name
+let name = document.createElement("h5");
+name.classList.add("product-name");
+name.innerText = i.productName.toUpperCase();
+container.appendChild(name);
+//price
+let price = document.createElement("h6");
+price.innerText = "$" + i.price;
+container.appendChild(price);
+
+card.appendChild(container);
+document.getElementById("products").appendChild(card);
+}
+
+//parameter passed from button (Parameter same as category)
+function filterProduct(value) {
+//Button class code
+let buttons = document.querySelectorAll(".button-value");
+buttons.forEach((button) => {
+  //check if value equals innerText
+  if (value.toUpperCase() == button.innerText.toUpperCase()) {
+    button.classList.add("active");
+  } else {
+    button.classList.remove("active");
+  }
+});
+
+//select all cards
+let elements = document.querySelectorAll(".card");
+//loop through all cards
+elements.forEach((element) => {
+  //display all cards on 'all' button click
+  if (value == "all") {
+    element.classList.remove("hide");
+  } else {
+    //Check if element contains category class
+    if (element.classList.contains(value)) {
+      //display element based on category
+      element.classList.remove("hide");
+    } else {
+      //hide other elements
+      element.classList.add("hide");
+    }
+  }
+});
+}
+
+//Search button click
+document.getElementById("search").addEventListener("click", () => {
+//initializations
+let searchInput = document.getElementById("search-input").value;
+let elements = document.querySelectorAll(".product-name");
+let cards = document.querySelectorAll(".card");
+
+//loop through all elements
+elements.forEach((element, index) => {
+  //check if text includes the search value
+  if (element.innerText.includes(searchInput.toUpperCase())) {
+    //display matching card
+    cards[index].classList.remove("hide");
+  } else {
+    //hide others
+    cards[index].classList.add("hide");
+  }
+});
+});
+
+//Initially display all products
+window.onload = () => {
+filterProduct("all");
+};
+</script>
+
+
+<!--teachers-->
+
+<div class="teachers">
+  <h3>
+    our teachers
+  </h3>
+</div>
+
+<section id="teachers">
+  <div class="swiper mySwiper container">
+    <div class="swiper-wrapper content">
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture1.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"><link rel="stylesheet" href="https://www.facebook.com/?locale=ar_AR"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Maya Thompson            </span>
+            <span class="profession">Web Developer</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture2.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Alex Parker</span>
+            <span class="profession">Musicer</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture3.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Liam Foster</span>
+            <span class="profession">life coach</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture4.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Olivia Evans</span>
+            <span class="profession">business</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture6.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Noah Hayes</span>
+            <span class="profession">Anatomy teacher</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture7.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Mia Johnson</span>
+            <span class="profession">business</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture8.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Sophia Rodrguz</span>
+            <span class="profession">software Engineering</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture11.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Grace Roberts</span>
+            <span class="profession">architectural</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <div class="card-content">
+          <div class="image">
+            <img src="Capture22.PNG" alt="">
+          </div>
+          <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="name-profession">
+            <span class="name">Lily Martinez</span>
+            <span class="profession">Web Developer</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="button">
+            <button class="aboutMe">About Me</button>
+            <button class="hireMe">Hire Me</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</br>
+</br></br>
+</br>
+<!--contect us-->
+
+<section class="about" id="about">
+  
+  <din class="row">
+    <div class="map-container">
+      <div class="mapBg"></div>
+      <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914410252845!2d2.291906375932066!3d48.85837360070842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2set!4v1695627657575!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+  </div>
+</div>
+      <div class="content">
+          <h3>How can you find us?</h3>
+          <p>You can find our location via maps, or you can contact us through our numbers and social media accounts</p>
+      <a href="#contact" class="btn">contact us</a>
+      </div>
+  </div>
+</section>
+
+
+<!---تسجيل الدخول-->
+<section class="aoll" id="register">
+  <div class="m">
+<div class="ccontainer" id="ccontainer">
+  <div class="form-container sign-up">
+      <form><!----
+          <h1>Create Account</h1>
+          <div class="social-icons">
+              <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registeration</span>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Password">
+          <button>Sign Up</button>
+      </form> -->
+  </div>
+  <div class="rs">
+      <form>
+          <h1>Log-In</h1>
+          <div class="social-icons">
+              <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email password</span>
+          <input id="username" type="email" placeholder="Email">
+          <input id="password" type="password" placeholder="Password">
+          <a href="#">Forget Your Password?</a>
+          <button id="mainLoginBtn">Log In</button>
+      </form>
+  </div>
+</div>
+</div>
+  <!----
+  <div class="toggle-container">
+      <div class="toggle">
+          <div class="toggle-panel toggle-left">
+              <h1>Welcome Back!</h1>
+              <p>Enter your personal details to use all of site features</p>
+              <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+              <h1>Hello, Friend!</h1>
+              <p>Register with your personal details to use all of site features</p>
+              <button class="hidden" id="register">Sign Up</button>
+          </div>   --->
+      </div>
+  </div>
+</div>
+</section>
+
+
+
+
+<script>
+  /*
+
+const ccontainer = document.getElementById('ccontainer');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+    ccontainer.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    ccontainer.classList.remove("active");
+});*/
+</script>
+<script src="software.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">customers service</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online Website</h4>
+        <ul>
+          <li><a href="#">courses</a></li>
+          <li><a href="#">reachers</a></li>
+          <li><a href="#">location</a></li>
+          <li><a href="#">log-in</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+
+
+        function showSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'none'
+        }
+      </script>
+    </body>
+    </html>
